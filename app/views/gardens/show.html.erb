@@ -8,12 +8,18 @@
 <%= link_to 'Edit', edit_garden_path(@garden) %> |
 <%= link_to 'Back', gardens_path %>
 
-<%# List of plants %>
-
-<%# Form to add a plant %>
 <div class="container">
+  <%# List of plants %>
+  <div class="cards">
+    <% @garden.plants.each do |plant| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <%= plant.name %>
+      </div>
+    <% end %>
+  </div>
   <div class="row justify-content-center">
     <div class="col-4">
+      <%# Form to add a plant %>
       <h4>Add a new plant</h4>
       <%= simple_form_for [@garden, @plant] do |f| %>
         <%= f.input :name %>
