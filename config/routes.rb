@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
-  resources :gardens
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :gardens do
+    # GET /gardens/:garden_id/plants/new
+    # POST /gardens/:garden_id/plants
+    resources :plants, only: [:new, :create]
+  end
 end

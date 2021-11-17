@@ -5,9 +5,21 @@
   </div>
 </div>
 
+<%= link_to 'Edit', edit_garden_path(@garden) %> |
+<%= link_to 'Back', gardens_path %>
+
 <%# List of plants %>
 
 <%# Form to add a plant %>
-
-<%= link_to 'Edit', edit_garden_path(@garden) %> |
-<%= link_to 'Back', gardens_path %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <h4>Add a new plant</h4>
+      <%= simple_form_for [@garden, @plant] do |f| %>
+        <%= f.input :name %>
+        <%= f.input :image_url %>
+        <%= f.submit 'Add', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
