@@ -17,6 +17,24 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.card-remove-link {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: inherit;
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    color: inherit;
+    opacity: 1;
+    text-decoration: none;
+  }
 }
 
 // Smallest device

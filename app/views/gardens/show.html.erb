@@ -12,8 +12,12 @@
   <%# List of plants %>
   <div class="cards">
     <% @garden.plants.each do |plant| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= plant.image_url %>')">
         <%= plant.name %>
+        <%#= link_to '<i class="far fa-times-circle"></i>'.html_safe, plant_path(plant), method: :delete, data: { confirm: 'Are you sure?' }, class: 'card-remove-link' %>
+        <%= link_to plant_path(plant), method: :delete, data: { confirm: 'Are you sure?' }, class: 'card-remove-link' do %>
+          <i class="far fa-times-circle"></i>
+        <% end %>
       </div>
     <% end %>
   </div>
