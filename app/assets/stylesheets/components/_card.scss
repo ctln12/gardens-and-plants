@@ -37,6 +37,20 @@
   }
 }
 
+.card-tags {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  width: 80%;
+  span {
+    background: $light-gray;
+    color: $gray;
+    font-size: .6em;
+    padding: 5px 10px;
+    border-radius: 3px;
+  }
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
